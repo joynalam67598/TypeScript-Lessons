@@ -1,19 +1,26 @@
 // TS Built-in Type: any, unknown, never, enum, tuple.
-let sales: number = 123_456_789;
-let course: string = "TypeScript";
-let is _published: boolean = true;
-// In TS we don't need always anotate veriable like this TS can detect the type of the veriable from its first declaration.
-let level; // what about this?
-// this is "any" type variable like var. we can assigne any type of data to this later. but its not the best prectice.
+function calculateTax(income: number, taxYear = 2022): number /*return type*/ {
+  if (income < 50_000 && taxYear < 2022) return income * 1.2;
+  return income * 1.3;
+}
 
-//Array
-let numbers = []; // -> any type
-let nums: number[] = []; //-> number
+calculateTax(10_000, 2021);
+calculateTax(10_000);
 
-// tuple
-let user: [number, string] = [1, 'TS']
+// object
 
-//enum
-enum Size {Small = 1, Medium, Large}; // based on the first member value other value will be assigned automatically.
-// const enum Size3 {Small = 1, Medium, Large}; 
-// we can use const to generate more optimized code in js
+//let employee = { id: 1 };
+// In js object is dynamic thier shape can change any time but its not valid in Typescript.
+//employee.name = "TS" // not valid in TS
+
+let employee: {
+  readonly id: number;
+  name: string;
+  retire: (date: Date) => void;
+} = {
+  id: 1,
+  name: "TS",
+  retire: (date: Date) => {
+    console.log(date);
+  },
+};
