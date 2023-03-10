@@ -1,20 +1,27 @@
-"use strict";
-let employee = {
-    id: 1,
-    name: "TS",
-    retire: (date) => {
-        console.log(date);
-    },
-};
-function kgToLbs(weight) {
-    if (typeof weight === "number")
-        return weight * 2;
-    return parseInt(weight) * 2;
+export class Player {
+    constructor(n, a, c) {
+        this.name = n;
+        this.age = a;
+        this.country = c;
+    }
+    play() {
+        console.log(`${this.name}`);
+    }
 }
-kgToLbs(10);
-kgToLbs("10kgs");
-let textBox = {
-    drag: () => { },
-    resize: () => { },
-};
+const marshafi = new Player("marsha", 50, "Ban");
+const players = [];
+players.push(marshafi);
+class Player1 {
+    constructor(name, age, country) {
+        this.name = name;
+        this.age = age;
+        this.country = country;
+    }
+    play() {
+        console.log(`${this.name}`);
+    }
+}
+const marshafi1 = new Player("marsha", 50, "Ban");
+const players1 = [];
+players.push(marshafi1);
 //# sourceMappingURL=index.js.map
