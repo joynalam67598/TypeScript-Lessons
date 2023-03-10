@@ -4,10 +4,11 @@ TypeScript is a programming language crated at Microsoft to adress some shortcom
 ------------
 
 **Freature:**
-- Type checking,
-- Code Completion,
-- Refactoring,
-- Shorthand Notations,
+- Type checking.
+- Code Compiletion.
+- Refactoring.
+- Shorthand Notations.
+- Familiar OOP.
 
 **DrawBack:**
   -   Compiltaion: Browser don't understand TypeScript.
