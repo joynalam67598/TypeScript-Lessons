@@ -1,57 +1,46 @@
-// Class
-export class Player {
-  name: string;
-  age: number;
-  country: string;
-  constructor(n: string, a: number, c: string) {
-    this.name = n;
-    this.age = a;
-    this.country = c;
-  }
+// const addId = (obj: object) => {
+//   let id = Math.floor(Math.random() * 100);
+//   return { ...obj, id };
+// };
+// normally genric na hole object ta te ki ache ta typescript jane na, tai genric use korte hoy.
 
-  play() {
-    console.log(`${this.name}`);
-  }
-}
+// const addId = <T>(obj: T) => {
+//   let id = Math.floor(Math.random() * 100);
+//   return { ...obj, id };
+// };
+// but is tish way we can pass any type of data like: addId("name");
+// to fix this we can specify the type
 
-const marshafi = new Player("marsha", 50, "Ban");
+// const addId = <T extends object>(obj: T) => {
+//   let id = Math.floor(Math.random() * 100);
+//   return { ...obj, id };
+// };
 
-const players: Player[] = [];
+// more specifically
 
-players.push(marshafi);
 
-// Access Modifier
+const addId = <T extends {
+  name: string,
+  age: number,
+}>(obj: T) => {
+  let id = Math.floor(Math.random() * 100);
+  return { ...obj, id };
+};
 
-// class Player1 {
-//   public name: string;
-//   private age: number;
-//   readonly country: string;
-//   constructor(n: string, a: number, c: string) {
-//     this.name = n;
-//     this.age = a;
-//     this.country = c;
-//   }
 
-//   play() {
-//     console.log(`${this.name}`);
-//   }
-// }
+let user = addId({
+  name: "mash",
+  age: 40,
+});
 
-//sortcut.
-class Player1 {
-  constructor(
-    public name: string,
-    private age: number,
-    readonly country: string
-  ) {}
+// normally genric na hole object ta te ki ache ta typescript jane na 
 
-  play() {
-    console.log(`${this.name}`);
-  }
-}
 
-const marshafi1 = new Player("marsha", 50, "Ban");
 
-const players1: Player1[] = [];
 
-players.push(marshafi1);
+
+
+
+// - -------------------------------
+
+// generices in interface;
