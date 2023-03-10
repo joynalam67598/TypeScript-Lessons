@@ -1,5 +1,5 @@
 // Class
-class Player {
+export class Player {
   name: string;
   age: number;
   country: string;
