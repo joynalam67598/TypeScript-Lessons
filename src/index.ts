@@ -1,60 +1,57 @@
-// type aliases -> to define a single shape of the object
-type Employee = {
-  readonly id: number;
+// Class
+class Player {
   name: string;
-  retire: (date: Date) => void;
-};
+  age: number;
+  country: string;
+  constructor(n: string, a: number, c: string) {
+    this.name = n;
+    this.age = a;
+    this.country = c;
+  }
 
-let employee: Employee = {
-  id: 1,
-  name: "TS",
-  retire: (date: Date) => {
-    console.log(date);
-  },
-};
-
-// union type - we can give veriable or function peramiter more the one type
-function kgToLbs(weight: number | string): number {
-  // Narrowing
-  if (typeof weight === "number") return weight * 2;
-  return parseInt(weight) * 2;
+  play() {
+    console.log(`${this.name}`);
+  }
 }
 
-kgToLbs(10);
-kgToLbs("10kgs");
+const marshafi = new Player("marsha", 50, "Ban");
 
-// intrsection type
+const players: Player[] = [];
 
-type Draggable = {
-  drag: () => void;
-};
+players.push(marshafi);
 
-type Resizeable = {
-  resize: () => void;
-};
+// Access Modifier
 
-// combile them in a new type
+// class Player1 {
+//   public name: string;
+//   private age: number;
+//   readonly country: string;
+//   constructor(n: string, a: number, c: string) {
+//     this.name = n;
+//     this.age = a;
+//     this.country = c;
+//   }
 
-type UIWidget = Draggable & Resizeable;
+//   play() {
+//     console.log(`${this.name}`);
+//   }
+// }
 
-let textBox: UIWidget = {
-  drag: () => {},
-  resize: () => {},
-};
+//sortcut.
+class Player1 {
+  constructor(
+    public name: string,
+    private age: number,
+    readonly country: string
+  ) {}
 
-//literal type - to limit the values we use literal type
-//Literal (exact, specific)
-let quantity: 50 | 100 = 100;
-
-//or
-
-type Quantity = 5 | 10;
-let qty: Quantity = 5;
-
-//nullable type -
-
-function greet(name: string | null | undefined) {
-  console.log(name?.toUpperCase());
+  play() {
+    console.log(`${this.name}`);
+  }
 }
 
-greet(null);
+const marshafi1 = new Player("marsha", 50, "Ban");
+
+const players1: Player1[] = [];
+
+players.push(marshafi1);
