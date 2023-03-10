@@ -1,4 +1,4 @@
-# TypeScript-Lessons
+# TypeScript
 TypeScript is a programming language crated at Microsoft to adress some shortcomings of JavaScript.
 TypeScript is JavaScript with Type Checking.
 
